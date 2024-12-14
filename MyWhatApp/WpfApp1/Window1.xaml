@@ -1,0 +1,33 @@
+﻿
+    <Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Border BorderThickness="2" Padding="3">
+            <StackPanel Orientation="Vertical">
+
+
+                    
+
+                <ComboBox x:Name="lb" SelectionChanged="Change"/>
+                <ListView x:Name="lv"/>
+
+                <Button  Click="ClickMeLeft" Width="40" Height="40" Background="Transparent" BorderThickness="0">
+                    <Image Source="C:\\Users\\nativ\\source\\repos\\HishtalmutMaui\\MyWhatApp\\WpfApp1\\Icons\\3670422031676390669-128.png" />
+                </Button>
+                <Image x:Name="flowerImg"  Width="80" Height="80" Source="c:\users\nativ\source\repos\hishtalmutmaui\mywhatapp\wpfapp1\myimages\flower1.jfif"/>
+                <Button  Click="ClickMeRight" Width="40" Height="40" Background="Transparent" BorderThickness="0">
+                    <Image Source="C:\\Users\\nativ\\source\\repos\\HishtalmutMaui\\MyWhatApp\\WpfApp1\\Icons\\3778304791596027200-128.png" />
+                </Button>
+                <TextBlock x:Name="msg" Visibility="Collapsed" Text="סוף הרשימה" Foreground="Red"/>
+        
+            </StackPanel>
+        </Border>
+     </Grid>
+</Window>

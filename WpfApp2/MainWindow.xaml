@@ -1,0 +1,67 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <ComboBox x:Name="cb"
+  MinWidth="72"
+  materialDesign:HintAssist.Hint="(editable)"
+  IsEditable="True"
+                   
+  ItemsSource="{Binding LongIntegerList}">
+            <ComboBox.Text>
+                <Binding
+      Mode="TwoWay"
+      Path="SelectedTextTwo"
+      UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <!--<colorsDomain:NotEmptyValidationRule
+          ValidatesOnTargetUpdated="True"
+                            xmlns:colorsDomain="clr-namespace:MaterialDesignDemo.Domain" />-->
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.Text>
+        </ComboBox>
+        <Button Click="DoSmt"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+  Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+  ToolTip="MaterialDesignFloatingActionDarkButton">
+            <materialDesign:PackIcon
+    Width="30"
+    Height="30"
+    Kind="Alarm" RenderTransformOrigin="-5.21,0.316"
+                 />
+             
+        </Button>
+
+        <materialDesign:DialogHost Content="DialogHost" HorizontalAlignment="Left" Margin="88,184,0,0" VerticalAlignment="Top" Height="52" Width="250"/>
+        <ComboBox HorizontalAlignment="Left" Margin="279,79,0,0" VerticalAlignment="Top" Width="226" Height="52"/>
+        <materialDesign:Clock HorizontalAlignment="Left" Margin="441,116,0,0" VerticalAlignment="Top"/>
+        <materialDesign:Flipper HorizontalAlignment="Left" Margin="279,58,0,0" VerticalAlignment="Top"/>
+        <Button Margin="232,217,442,151">
+        <materialDesign:PackIcon Margin="276,70,0,0" RenderTransformOrigin="0.5,0.5" Height="83" Width="81">
+            <materialDesign:PackIcon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-46.988"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </materialDesign:PackIcon.RenderTransform>
+        </materialDesign:PackIcon>
+        </Button>
+
+        <materialDesign:Clock
+  Width="auto"
+  DisplayAutomation="CycleWithSeconds"
+  Is24Hours="True"
+  Style="{StaticResource MaterialDesignClock}" Margin="-151,33,151,-33"  />
+    </StackPanel>
+</Window>
